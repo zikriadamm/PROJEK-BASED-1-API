@@ -1,0 +1,22 @@
+meta {
+  name: 6 - POST Tambah Pengeluaran Baru (Sukses 201)
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{local_url}}/expenses
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title": "Tiket Masuk Tokyo Tower",
+    "category": "hiburan",
+    "amount": 3000,
+    "currency": "JPY",
+    "date": "2026-10-26",
+    "notes": "Tiket masuk dek observasi malam"
+  }
+}

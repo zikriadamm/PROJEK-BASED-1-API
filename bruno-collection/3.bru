@@ -1,0 +1,15 @@
+meta {
+  name: 3 - GET Ringkasan & Risiko Anggaran (Sukses 200)
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{local_url}}/expenses/summary?budget=10000000
+  body: none
+  auth: none
+}
+
+params:query {
+  budget: 10000000
+}

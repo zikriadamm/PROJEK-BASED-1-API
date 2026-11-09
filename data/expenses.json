@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "Hotel Shinjuku Prince (Update Diskon)",
+    "category": "akomodasi",
+    "amount": 14000,
+    "currency": "JPY",
+    "date": "2026-10-20",
+    "notes": "Menginap 2 malam di Tokyo"
+  },
+  {
+    "id": 2,
+    "title": "Tiket Shinkansen Tokyo-Kyoto",
+    "category": "transportasi",
+    "amount": 13900,
+    "currency": "JPY",
+    "date": "2026-10-22",
+    "notes": "Kereta cepat transit antar kota"
+  },
+  {
+    "id": 3,
+    "title": "Makan Malam Ramen Ichiran",
+    "category": "konsumsi",
+    "amount": 2200,
+    "currency": "JPY",
+    "date": "2026-10-22",
+    "notes": "Kuliner khas jepang bersama tim"
+  },
+  {
+    "id": 4,
+    "title": "Tiket Masuk Universal Studios",
+    "category": "hiburan",
+    "amount": 88,
+    "currency": "USD",
+    "date": "2026-10-24",
+    "notes": "Tiket akses 1 hari penuh"
+  },
+  {
+    "id": 6,
+    "title": "Tiket Masuk Tokyo Tower",
+    "category": "hiburan",
+    "amount": 3000,
+    "currency": "JPY",
+    "date": "2026-10-26",
+    "notes": "Tiket masuk dek observasi malam"
+  }
+]

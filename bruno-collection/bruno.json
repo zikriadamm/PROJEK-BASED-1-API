@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "PBL1 - Travel Expense API",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

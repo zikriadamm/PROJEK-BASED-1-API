@@ -1,0 +1,195 @@
+{
+  "info": {
+    "_postman_id": "c1f7a28e-89a1-4321-9988-travel-expense-pbl1",
+    "name": "PBL1 - Travel Expense Tracker & Currency Converter API",
+    "description": "Koleksi Pengujian Postman untuk Evaluasi Sub-CPMK 4 (Rekayasa API). Memuat skenario berhasil dan gagal untuk setiap endpoint.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. GET - Tampilkan Semua Pengeluaran (Sukses 200)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/expenses",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["expenses"]
+        }
+      }
+    },
+    {
+      "name": "2. GET - Filter Kategori & Mata Uang (Sukses 200)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/expenses?category=akomodasi&currency=JPY",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["expenses"],
+          "query": [
+            { "key": "category", "value": "akomodasi" },
+            { "key": "currency", "value": "JPY" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "3. GET - Ringkasan Anggaran & Analisis Risiko (Sukses 200)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/expenses/summary?budget=10000000",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["expenses", "summary"],
+          "query": [
+            { "key": "budget", "value": "10000000" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "4. GET - Detail Pengeluaran Berdasarkan ID (Sukses 200)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/expenses/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["expenses", "1"]
+        }
+      }
+    },
+    {
+      "name": "5. GET - Detail Pengeluaran ID Fiktif (Gagal 404)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/expenses/9999",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["expenses", "9999"]
+        }
+      }
+    },
+    {
+      "name": "6. POST - Tambah Pengeluaran Baru (Sukses 201)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Tiket Masuk Tokyo Tower\",\n  \"category\": \"hiburan\",\n  \"amount\": 3000,\n  \"currency\": \"JPY\",\n  \"date\": \"2026-10-26\",\n  \"notes\": \"Tiket masuk observasi malam\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/expenses",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["expenses"]
+        }
+      }
+    },
+    {
+      "name": "7. POST - Tambah Pengeluaran Data Kosong/Salah (Gagal 400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"\",\n  \"category\": \"invalid_kategori\",\n  \"amount\": -500\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/expenses",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["expenses"]
+        }
+      }
+    },
+    {
+      "name": "8. PUT - Perbarui Catatan Pengeluaran (Sukses 200)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Hotel Shinjuku Prince (Update Diskon)\",\n  \"amount\": 14000\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/expenses/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["expenses", "1"]
+        }
+      }
+    },
+    {
+      "name": "9. PUT - Perbarui ID Tidak Ditemukan (Gagal 404)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Item Khayalan\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/expenses/8888",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["expenses", "8888"]
+        }
+      }
+    },
+    {
+      "name": "10. DELETE - Hapus Catatan Pengeluaran (Sukses 200)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/expenses/5",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["expenses", "5"]
+        }
+      }
+    },
+    {
+      "name": "11. DELETE - Hapus ID Tidak Ditemukan (Gagal 404)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/expenses/9999",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["expenses", "9999"]
+        }
+      }
+    }
+  ]
+}

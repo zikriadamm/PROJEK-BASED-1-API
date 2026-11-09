@@ -1,0 +1,12 @@
+{
+  "name": "projek-based-1-api-travel-expense",
+  "version": "1.0.0",
+  "description": "Travel Expense Tracker & Currency Converter RESTful API (Sub-CPMK 4)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "client": "node client.js"
+  },
+  "author": "Kelompok Rekayasa API",
+  "license": "ISC"
+}

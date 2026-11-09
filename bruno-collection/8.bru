@@ -1,0 +1,18 @@
+meta {
+  name: 8 - PUT Update Pengeluaran ID 1 (Sukses 200)
+  type: http
+  seq: 8
+}
+
+put {
+  url: {{local_url}}/expenses/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title": "Hotel Shinjuku Prince (Update Diskon)",
+    "amount": 14000
+  }
+}

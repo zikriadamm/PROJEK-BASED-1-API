@@ -1,0 +1,17 @@
+meta {
+  name: 9 - PUT Update ID Fiktif (Gagal 404)
+  type: http
+  seq: 9
+}
+
+put {
+  url: {{local_url}}/expenses/8888
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title": "Item Fiktif"
+  }
+}

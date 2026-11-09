@@ -1,0 +1,19 @@
+meta {
+  name: 7 - POST Payload Kosong / Salah (Gagal 400)
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{local_url}}/expenses
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title": "",
+    "category": "invalid_kategori",
+    "amount": -500
+  }
+}
